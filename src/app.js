@@ -13,10 +13,10 @@ app.use(express.json())
 
 
 app.get('/', (req, res) => {
-    res.send("Desafío #3 - Servidor con Express.")
+    res.send("Servidor Express.")
 })
 
-//Consulta de productos.
+
 app.get('/products', async (req,res) => {
     const products = await manager.getProducts();
     let {limit} = req.query;
@@ -26,7 +26,7 @@ app.get('/products', async (req,res) => {
         res.send(`Estos son los productos según límite: ${(JSON.stringify(datos))}`);
     } else {
         datos = products;
-        res.send(`Estos son todos los productos existentes: ${(JSON.stringify(datos))}`);
+        res.send(`Productos existentes: ${(JSON.stringify(datos))}`);
     }
     
 });
